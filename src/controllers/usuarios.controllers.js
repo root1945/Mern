@@ -1,8 +1,9 @@
 const Usuarios = require('../model/usuarios.model')
 
 module.exports = {
-  index(req, res){
-    res.json({message: "Hello"})
+  async index(req, res){
+    const user = await Usuarios.find()
+    res.json(user)
   },
   async create(req, res){
     const {name_usuario, email_usuario, tipo_usuario, senha_usuario} = req.body
@@ -15,5 +16,10 @@ module.exports = {
     }else {
       return res.status(500).json(user)
     }
+  },
+  async details(req, res){
+    const {_id} = req.params
+    const user = await Usuarios.findOne({_id})
+    res.json(user)
   }
 }

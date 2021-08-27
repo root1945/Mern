@@ -6,7 +6,7 @@ const mongoose = require('mongoose')
 const routes = require('./src/model/routes')
 
 const app = express()
-const port = process.env.PORT || 5000
+const port = process.env.PORT || 8000
 
 mongoose.connect('mongodb://localhost:27017/mern', {
   useUnifedTopology: true,
@@ -25,6 +25,6 @@ app.use(express.json())
 
 app.use(routes)
 
-app.listen(3000, () => {
-  console.log(`Server runing on port ${3000}`)
+app.listen(5000, () => {
+  console.log(`Server runing on port ${5000}`)
 })

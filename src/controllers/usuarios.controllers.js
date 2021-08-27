@@ -21,5 +21,16 @@ module.exports = {
     const {_id} = req.params
     const user = await Usuarios.findOne({_id})
     res.json(user)
+  },
+  async delete (req, res){
+    const {_id} = req.params
+    const user = await Usuarios.findByIdAndDelete({_id})
+    return res.json(user)
+  },
+  async update (req, res){
+    const { _id, name_usuario, email_usuario, senha_usuario, tipo_usuario } = req.body
+    const data = {name_usuario, email_usuario, senha_usuario, tipo_usuario}
+    const user = await Usuarios.findOneAndUpdate({_id}, data, {new: true})
+    res.json(user)
   }
 }

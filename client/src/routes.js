@@ -4,8 +4,8 @@ import { BrowserRouter , Switch, Route} from 'react-router-dom'
 import DashBoard from '../src/pages/admin/dashboard'
 
 import Produtos from './pages/admin/produtos'
-import ProdutoEditar from './pages/admin/produtos/produtos.editar'
-import ProdutoCadastrar from './pages/admin/produtos/produtos.cadastrar'
+//import ProdutoEditar from './pages/admin/produtos/produtos.editar'
+//import ProdutoCadastrar from './pages/admin/produtos/produtos.cadastrar'
 
 import Usuarios from './pages/admin/users'
 import UsuariosEditar from './pages/admin/users/usuarios.editar'

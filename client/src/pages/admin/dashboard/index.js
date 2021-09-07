@@ -37,10 +37,10 @@ export default function Dashboard() {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      <MenuAdmin />
+      <MenuAdmin title={'Dashboard'}/>
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
-        <Container maxWidth="lg" className={classes.container}>
+        <Container maxWidth="sm" className={classes.container}>
           <Grid container spacing={3}>  
           <img src={imgAdmin} alt=" " />
           </Grid>

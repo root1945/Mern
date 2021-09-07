@@ -11,6 +11,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
+import CssBaseline from '@material-ui/core/CssBaseline';
 
 const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
@@ -74,7 +75,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function MenuAdmin() {
+export default function MenuAdmin({title}) {
 
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
@@ -87,6 +88,7 @@ export default function MenuAdmin() {
 
   return (
     <>
+    <CssBaseline />
     <AppBar position="absolute" className={clsx(classes.appBar, open && classes.appBarShift)}>
     <Toolbar className={classes.toolbar}>
       <IconButton
@@ -99,7 +101,7 @@ export default function MenuAdmin() {
         <MenuIcon />
       </IconButton>
       <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
-        Dashboard
+        {title}
       </Typography>
     </Toolbar>
   </AppBar>
